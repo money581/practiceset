@@ -6,7 +6,7 @@ async function login(e) {
             password: e.target.password.value
         };
         
-        const response = await axios.post('http://localhost:3000/user/login', obj);
+        const response = await axios.post('http://51.20.140.212:3000/user/login', obj);
 
         if (response.status === 201 && response.data.success) {
             console.log(response.data);

@@ -11,7 +11,7 @@ userForm.addEventListener('submit', async (event) => {
   const token = localStorage.getItem('token');
   const groupId = localStorage.getItem('groupId')
   let userName = userNameInput.value;
-  const response = await axios.post("http://localhost:3000/usergroup/adduser", { userName, groupId }, { headers: { 'Authentication': token } });
+  const response = await axios.post("http://51.20.140.212:3000/usergroup/adduser", { userName, groupId }, { headers: { 'Authentication': token } });
   //console.log(response);
   userNameInput.value = '';
 });
@@ -19,7 +19,7 @@ async function getuser() {
   const token = localStorage.getItem('token');
   const groupId = localStorage.getItem('groupId');
   try {
-    const response = await axios.get(`http://localhost:3000/usergroup/getgroupuser?groupId=${groupId}`, {
+    const response = await axios.get(`http://51.20.140.212:3000/usergroup/getgroupuser?groupId=${groupId}`, {
       headers: { 'Authentication': token }
     });
 
@@ -44,7 +44,7 @@ chatForm.addEventListener("submit", async (event) => {
   const groupId=localStorage.getItem('groupId')
   const token = localStorage.getItem('token');
  try {
-    const response = await axios.post("http://localhost:3000/groupuser/userchat", { message,groupId }, {
+    const response = await axios.post("http://51.20.140.212:3000/groupuser/userchat", { message,groupId }, {
       headers: {'Authentication': token }
     });
    
@@ -70,7 +70,7 @@ async function getMessages() {
   const token = localStorage.getItem('token');
   
   try {
-    const response = await axios.get(`http://localhost:3000/groupuser/getuserchat?groupId=${groupId}`, {
+    const response = await axios.get(`http://51.20.140.212:3000/groupuser/getuserchat?groupId=${groupId}`, {
       headers: { 'Authentication': token }
     });
     if (response.data.success) {

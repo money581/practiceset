@@ -10,7 +10,7 @@ chatForm.addEventListener('submit', async (event) => {
   event.preventDefault();
   const token = localStorage.getItem('token');
   let message = { text: chatMessageInput.value };
-  const response = await axios.post("http://localhost:3000/users/chat", message, { headers: { 'Authentication': token } });
+  const response = await axios.post("http://51.20.140.212:3000/users/chat", message, { headers: { 'Authentication': token } });
   console.log(response);
   chatMessageInput.value = '';
 });
@@ -23,7 +23,7 @@ createGroupForm.addEventListener('submit', async (event) => {
   const groupNameInput = document.getElementById('group-name');
   let groupName = groupNameInput.value;
   // Capture the user's ID from wherever you store it
-  const response = await axios.post("http://localhost:3000/group/create", { groupName }, { headers: { 'Authentication': token } });
+  const response = await axios.post("http://51.20.140.212:3000/group/create", { groupName }, { headers: { 'Authentication': token } });
   //console.log(response.data.group.id);
   // window.localStorage.setItem('groupjkjd',response.data.group.id)
   groupNameInput.value = '';
@@ -32,7 +32,7 @@ createGroupForm.addEventListener('submit', async (event) => {
 
 async function getGroups() {
   const token = localStorage.getItem('token');
-  const response = await axios.get("http://localhost:3000/group/groups", { headers: { 'Authentication': token } });
+  const response = await axios.get("http://51.20.140.212:3000/group/groups", { headers: { 'Authentication': token } });
   const groupList = response.data.groups;
   
   const groupsUl = document.getElementById('groups');
@@ -57,7 +57,7 @@ async function getGroups() {
 // Call the getGroups function to initially populate the group list
 getGroups();
 async function getusers() {
-  const response = await axios.get("http://localhost:3000/user/signup");
+  const response = await axios.get("http://51.20.140.212:3000/user/signup");
   const userlist = response.data.users;
   userList.innerHTML = ''; // Clear previous user list
   userlist.forEach((user) => {
@@ -68,7 +68,7 @@ async function getusers() {
 }
 
 async function getmessages() {
-  const response = await axios.get("http://localhost:3000/users/chat");
+  const response = await axios.get("http://51.20.140.212:3000/users/chat");
   let chatHistory = response.data.message;
   chatMessages.innerHTML = ''; // Clear previous chat messages
   chatHistory.forEach((chat) => {
