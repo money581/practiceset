@@ -12,6 +12,8 @@ const Usergroupchat=require('./models/usergroupchat')
 require('dotenv').config();
 
 const app = express();
+app.use(express.static(path.join(__dirname,"practiceset")))
+
 app.use(cors())
 app.use(bodyParser.json({ extended: false }));
 const userRoute = require('./routers/user');
@@ -24,7 +26,9 @@ app.use('/user',userRoute);
 app.use('/users', chatRoute);
 app.use('/usergroup',usergroupRouter);
 app.use('/groupuser',usergroupchat);
-
+app.use((req,res)=>{
+    res.sendFile(path.join(__dirname,`/practiceset/${req.url}`))
+})
 User.hasMany(Chat);
 Chat.belongsTo(User);
 
