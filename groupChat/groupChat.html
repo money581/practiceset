@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>welcome to Group Chat</h1>
+  <div id="chat-window">
+    <div id="user-list">
+      <h2>Users</h2>
+      <ul id="user">
+          <!-- The list of groups will be displayed here -->
+      </ul>
+    </div>
+    
+    <div id="chat-messages">
+       <!-- Display of chat message -->
+    </div>
+    <form id="chat-form">
+        <input type="text" id="chat-message" placeholder="Type your message here">
+        <button type="submit">Send</button>
+    </form>
+    
+    <!-- Form for creating a group -->
+    <form id="user-form">
+      <input type="text" id="user-name" placeholder="Enter user name">
+      <!-- You can store the user's ID in a hidden input field or retrieve it as needed -->
+    
+      <button type="submit">Add User</button>
+    </form>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.4.1/axios.min.js"></script>
+   <script src="groupChat.js"></script>
+</body>
+</html>

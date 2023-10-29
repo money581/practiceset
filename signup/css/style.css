@@ -1,0 +1,31 @@
+.logo{
+    display: block;
+    margin: auto;
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+}
+body{
+    
+    background-image: url("background image.jpg");
+}
+.container {
+    background-color: rgb(243, 237, 237);
+    display: block;
+    margin: auto;
+    border: 5px solid green;
+    padding: 50px;
+    width: 314px;
+    height: 192px;
+    border-radius: 20px;
+}
+.abc{
+    .abc {
+        width: 208px;
+        border-radius: 10px;
+        display: block;
+        margin: auto;
+        /* width: 126px; */
+        height: auto;
+    }
+}
