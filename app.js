@@ -27,7 +27,7 @@ app.use('/users', chatRoute);
 app.use('/usergroup',usergroupRouter);
 app.use('/groupuser',usergroupchat);
 app.use((req,res)=>{
-    res.sendFile(path.join(__dirname,`/practiceset/${req.url}`))
+    res.sendFile(path.join(__dirname,`/${req.url}`))
 })
 User.hasMany(Chat);
 Chat.belongsTo(User);
